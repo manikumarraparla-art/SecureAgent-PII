@@ -1,0 +1,8 @@
+# Includes runtime requirements; developer/CI tools are separate.
+-r requirements.txt
+pytest==9.1.1
+# Directly used by tests and real local startup verification.
+toml==0.10.2
+websockets==16.1.1
+# Workflow validation (already installed through Presidio; no package upgrade).
+PyYAML==6.0.3
