@@ -1,0 +1,36 @@
+# SecureAgent-PII dependencies.
+# Verified on macOS arm64 with Python 3.14 using official binary wheels only
+# (pip install --only-binary=:all: -r requirements.txt).
+
+# --- PII detection / anonymization ---
+presidio-analyzer==2.2.364
+spacy==3.8.16
+# Existing Presidio dependency; explicit pin for offline email suffix validation.
+tldextract==5.4.0
+# spaCy English NER model used by Presidio for PERSON detection (not an LLM).
+en_core_web_lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.8.0/en_core_web_lg-3.8.0-py3-none-any.whl
+
+# --- API / runtime (used from Phase 2) ---
+fastapi==0.142.2
+uvicorn==0.54.0
+httpx==0.28.1
+pydantic==2.13.5
+
+# --- Configuration ---
+python-dotenv==1.2.4
+
+# --- Local presentation client (Phase 5; verified cp314 macOS arm64 wheels) ---
+streamlit==1.64.0
+
+# --- Phase 8 orchestration and tool protocol (verified cp314 macOS arm64 / py3 wheels) ---
+# LangGraph: explicit stateful graph orchestration. Pulls langchain-core as a hard
+# dependency; no LangChain agents/models are used and cloud tracing is refused.
+langgraph==1.2.12
+# Official Model Context Protocol Python SDK (modelcontextprotocol/python-sdk).
+# Used only with in-process servers; no HTTP/stdio/remote MCP server is configured.
+mcp==2.3.0
+
+# Direct imports for local MCP async execution and protocol result types.
+# Already installed versions; this declares usage without upgrading packages.
+anyio==4.15.1
+mcp-types==2.3.0
