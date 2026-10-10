@@ -1,6 +1,6 @@
 # SecureAgent-PII
 
-**Secure Local Enterprise AI Assistant · v1.0 release candidate**
+**Secure Local Enterprise AI Assistant · v1.0**
 
 A portfolio reference implementation, not a production-ready claims system.
 Start with the [five-minute demo](docs/demo-guide.md), [final architecture](architecture.md),
