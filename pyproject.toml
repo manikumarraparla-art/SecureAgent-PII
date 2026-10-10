@@ -1,0 +1,9 @@
+[project]
+name = "secureagent-pii"
+version = "1.0.0"
+description = "Local secure enterprise AI assistant with a PII gateway, secure RAG, LangGraph orchestration, MCP tools and local UI"
+requires-python = ">=3.10,<3.15"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
